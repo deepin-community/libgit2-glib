@@ -1,0 +1,5 @@
+# Not marked as superficial because it actually runs upstream's
+# unit test (currently there is only one)
+Tests: build
+Restrictions: allow-stderr
+Depends: build-essential, libgit2-glib-1.0-dev, libglib2.0-dev, pkg-config

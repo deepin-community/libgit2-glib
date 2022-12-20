@@ -1,0 +1,8 @@
+Document: libgit2-glib-1.0
+Title: libgit2-glib-1.0 documentation
+Abstract: This document describes libgit2-glib-1.0 API, and how it can be used.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libgit2-glib-1.0-doc/html/index.html
+Files: /usr/share/doc/libgit2-glib-1.0-doc/html/*

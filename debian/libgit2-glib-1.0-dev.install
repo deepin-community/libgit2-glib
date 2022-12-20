@@ -1,0 +1,5 @@
+usr/lib/*/libgit2-glib-*.so
+usr/lib/*/pkgconfig/*
+usr/include/libgit2-glib-*
+usr/share/gir-1.0/*.gir
+usr/share/vala/vapi

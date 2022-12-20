@@ -1,0 +1,256 @@
+libgit2-glib (1.0.0.1-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 17:59:11 +0800
+
+libgit2-glib (1.0.0.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Drop patches applied in new release
+  * debian/libgit2-glib-1.0-0.symbols: Add new symbols
+  * Build-Depend on dh-sequence-gir and dh-sequence-gnome
+  * Bump debhelper-compat to 13
+  * debian/rules: Drop unneeded -Wl,--as-needed
+  * debian/rules: Drop no longer needed dbgsym migration
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 02 Jan 2022 11:14:59 -0500
+
+libgit2-glib (0.99.0.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - Compatible with libgit2 1.0 (Closes: #971563, #976541)
+  * Update symbols file for new API
+  * Add patches from upstream to fix VAPI installation
+
+ -- Simon McVittie <smcv@debian.org>  Sat, 05 Dec 2020 22:23:05 +0000
+
+libgit2-glib (0.28.0.1-2) unstable; urgency=medium
+
+  * debian/gir1.2-ggit-1.0.install: Install the Ggit.py override file at the
+    correct location (Closes: #946321)
+  * debian/control.in: Add libglib2.0-doc to B-D-I and mark the -doc package
+    with Build-Profiles: <!nodoc>
+  * debian/control.in: Mark libgit2-glib-1.0-dev with Multi-arch: same
+  * Bump debhelper version to 12
+  * Bump Standards-Version to 4.5.0 (no further changes)
+  * debian/libgit2-glib-1.0-doc.doc-base: Update the path to the documentation
+    to use the symlink inside /usr/share/doc, to please lintian
+  * Rename debian/TODO.Debian to debian/TODO to please lintian
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 02 Mar 2020 14:32:23 +0100
+
+libgit2-glib (0.28.0.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Simon McVittie ]
+  * New upstream release
+    - Compatible with libgit2 0.28 (Closes: #931684)
+  * d/tests/build: Rebuild and run upstream's unit test as an autopkgtest.
+    This exercises basic functionality of the library itself, as well as
+    the -dev package.
+  * d/p/Use-basename-in-enumtypes-templates.patch:
+    Add patch from Chris Lamb to make the build more reproducible
+    (Closes: #907793)
+  * Use a temporary home directory to work around #935817
+    (Closes: #934673)
+  * Standards-Version: 4.4.0 (no changes required)
+  * Set Rules-Requires-Root to no
+
+  [ Jongmin Kim ]
+  * Add new symbols
+
+  [ Pirate Praveen ]
+  * Use libgit2-dev >= 0.28
+
+  [ Simon McVittie ]
+  * Revert "Use libgit2-dev >= 0.28".
+    This version can be binNMU'd to be rebuilt against the new version
+    of libgit2 when the time comes.
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 26 Aug 2019 19:09:36 +0100
+
+libgit2-glib (0.27.8-1) experimental; urgency=medium
+
+  * New upstream release
+  * Bump minimum meson to 0.48.0
+  * deiban/libgit2-glib-1.0-0.symbols: Add new symbols
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 17 Mar 2019 16:23:11 -0400
+
+libgit2-glib (0.27.7-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add -Wl,-O1 to our LDFLAGS
+  * Drop libgit2-0.27-compat.patch: Applied in new release
+  * debian/watch: Watch for odd-numbered release too
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 23 Dec 2018 12:28:25 -0500
+
+libgit2-glib (0.26.4-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Jeremy Bicha ]
+  * New upstream release
+    - No longer uses gnome-common (Closes: #829841)
+  * Build with meson
+  * Drop obsolete debian/source/options
+  * Bump Standards-Version to 4.1.4
+
+  [ Simon McVittie ]
+  * d/p/libgit2-0.27-compat.patch:
+    Add patch from Steve Langasek to adapt to libgit2 0.27's API,
+    modified so that we can build against either libgit2 0.26 or 0.27
+    and so will only need a binNMU for the transition (Closes: #903146)
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 08 Jul 2018 13:58:00 +0100
+
+libgit2-glib (0.26.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/libgit2-glib-1.0-0.symbols: Add new symbols
+  * Add debian/docs to install NEWS
+  * Update debian/gbp.conf for Debian GNOME conventions
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Bump debhelper compat to 11
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 20 Jan 2018 22:36:24 -0500
+
+libgit2-glib (0.26.0-3) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 14 Sep 2017 13:12:32 +0200
+
+libgit2-glib (0.26.0-2) experimental; urgency=medium
+
+  * Rename gir1.2-git2-glib-1.0 to gir1.2-ggit-1.0
+
+ -- Laurent Bigonville <bigon@debian.org>  Fri, 25 Aug 2017 13:31:49 +0200
+
+libgit2-glib (0.26.0-1) experimental; urgency=medium
+
+  * New upstream version 0.26.0 (Closes: #872850)
+  * debian/control: Bump libgit2 build-dependency to 0.26.0
+  * debian/libgit2-glib-1.0-0.symbols: Adjust the symbols file
+  * Drop -dbg package and rely on the dbgsym one
+  * gir1.2-git2-glib-1.0.install: Install the typelib file in the m-a path
+  * debian/control: Bump Standards-Version to 4.1.0 (no further changes)
+  * Adopt the package in behalf of the Debian GNOME Maintainers team
+    (Closes: #851451)
+  * debian/control.in: Drop libgirepository1.0-dev from the
+    libgit2-glib-1.0-dev deps
+
+ -- Laurent Bigonville <bigon@debian.org>  Fri, 25 Aug 2017 13:25:45 +0200
+
+libgit2-glib (0.24.4-1) unstable; urgency=medium
+
+  * New upstream release [September 2016].
+  * Standards-Version: 3.9.8.
+  * Modernised Vcs-Browser URL.
+  * Fixed Vcs-Git URL.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 16 Oct 2016 15:27:18 +1100
+
+libgit2-glib (0.24.0-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 14 Apr 2016 14:07:51 +1000
+
+libgit2-glib (0.24.0-2) experimental; urgency=medium
+
+  * Added "Build-Depends-Package" field to .symbols file.
+    Thanks, Andreas Henriksson.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 13 Apr 2016 11:31:11 +1000
+
+libgit2-glib (0.24.0-1) experimental; urgency=medium
+
+  * New upstream release [March 2016] (Closes: #819871).
+  * Build-Depends:
+    - libgit2-dev (>= 0.23.0)
+    + libgit2-dev (>= 0.24.0)
+  * Standards-Version: 3.9.7.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 18 Mar 2016 06:27:21 +1100
+
+libgit2-glib (0.23.10-1) unstable; urgency=medium
+
+  * New upstream release [February 2016].
+  * Updated Vcs URLs (vcs-field-uses-insecure-uri).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 12 Feb 2016 10:27:57 +1100
+
+libgit2-glib (0.23.8-1) unstable; urgency=medium
+
+  * New upstream release [December 2015].
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 30 Dec 2015 22:44:44 +1100
+
+libgit2-glib (0.23.6-1) unstable; urgency=medium
+
+  * New upstream release [September 2015].
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Tue, 29 Sep 2015 11:33:43 +1000
+
+libgit2-glib (0.23.4-2) unstable; urgency=medium
+
+  * Updated versioned dependencies (Closes: #798832).
+    Thanks, Julien Cristau.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 14 Sep 2015 09:21:18 +1000
+
+libgit2-glib (0.23.4-1) unstable; urgency=low
+
+  * New upstream release [August 2015].
+  * Build-Depends:
+    - libgit2-dev (>= 0.22.2-2~)
+    + libgit2-dev (>= 0.23.0)
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 09 Sep 2015 05:18:50 +1000
+
+libgit2-glib (0.22.8-1) unstable; urgency=low
+
+  * New upstream release [April 2015] (Closes: #786598).
+    + Bump (Build-)Depends to "libgit2-dev (>= 0.22.2-2~)".
+  * Removed obsolete "build.patch".
+  * Build with "--enable-ssh" to fail without ssh support in libgit2.
+  * Upload to unstable.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 01 Jun 2015 10:41:07 +1000
+
+libgit2-glib (0.0.24-1) experimental; urgency=medium
+
+  * New upstream release [November 2014].
+  * Build-Depends: +valac
+  * Ship vapi files in -dev package (Closes: #771525).
+    Thanks, Sebastian Reichel.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 01 Jan 2015 14:34:12 +1100
+
+libgit2-glib (0.0.22-1) unstable; urgency=medium
+
+  * New upstream release [September 2014].
+  * Removed "nossh.patch".
+  * Standards-Version: 3.9.6.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 29 Sep 2014 15:55:39 +1000
+
+libgit2-glib (0.0.20-1) unstable; urgency=low
+
+  * New upstream release [July 2014].
+  * Upload to unstable (Closes: #760633).
+  * Added "build.patch" and "nossh.patch" to fix build errors.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 10 Sep 2014 19:23:19 +1000
+
+libgit2-glib (0.0.12-1) experimental; urgency=low
+
+  * Initial release (Closes: #706119).
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 28 Apr 2014 09:27:43 +1000

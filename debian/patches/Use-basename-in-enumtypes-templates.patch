@@ -1,0 +1,43 @@
+From: Chris Lamb <lamby@debian.org>
+Date: Sun, 2 Sep 2018 09:31:47 +0100
+Subject: Use @basename@ in enumtypes templates
+
+Whilst working on the Reproducible Builds effort [0], we noticed
+that libgit2-glib could not be built reproducibly.
+
+This is due to using @filename@ in the .h template (and
+corresponding .c file, but that is not installed as-is in the final
+package) and this includes the full, absolute build path.
+
+[0] https://reproducible-builds.org/
+---
+ libgit2-glib/ggit-enum-types.c.template | 2 +-
+ libgit2-glib/ggit-enum-types.h.template | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libgit2-glib/ggit-enum-types.c.template b/libgit2-glib/ggit-enum-types.c.template
+index 2c5f15b..acc5f75 100644
+--- a/libgit2-glib/ggit-enum-types.c.template
++++ b/libgit2-glib/ggit-enum-types.c.template
+@@ -4,7 +4,7 @@
+ /*** END file-header ***/
+ 
+ /*** BEGIN file-production ***/
+-/* enumerations from "@filename@" */
++/* enumerations from "@basename@" */
+ #include "@filename@"
+ 
+ /*** END file-production ***/
+diff --git a/libgit2-glib/ggit-enum-types.h.template b/libgit2-glib/ggit-enum-types.h.template
+index 7d7c564..f40326d 100644
+--- a/libgit2-glib/ggit-enum-types.h.template
++++ b/libgit2-glib/ggit-enum-types.h.template
+@@ -9,7 +9,7 @@ G_BEGIN_DECLS
+ /*** END file-header ***/
+ 
+ /*** BEGIN file-production ***/
+-/* Enumerations from "@filename@" */
++/* Enumerations from "@basename@" */
+ 
+ /*** END file-production ***/
+ 
